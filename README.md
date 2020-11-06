@@ -1,6 +1,6 @@
 # React Controlled Components
 
-## Overview
+## Overview 
 
 In this lesson, we'll discuss how to set up a controlled form in React.
 
@@ -39,7 +39,7 @@ class Form extends React.Component {
       <form>
         <input type="text" name="firstName" value={this.state.firstName} />
         <input type="text" name="lastName" value={this.state.lastName} />
-      </form>
+      </form> 
     )
   }
 }
