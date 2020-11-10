@@ -1,10 +1,10 @@
 import React from 'react';
+import FormTwo from './FormTwo'
  
-class Form extends React.Component {
+class ParentComponent extends React.Component {
   state = {
-    firstName: "John",
-    lastName: "Henry",
-    submittedData: []
+    firstName: "John2",
+    lastName: "Henry2",
   }
  
   handleFirstNameChange = event => {
@@ -18,7 +18,8 @@ class Form extends React.Component {
       lastName: event.target.value
     })
   }
- 
+
+   
   handleSubmit = event => {
     event.preventDefault()
     let formData = { firstName: this.state.firstName, lastName: this.state.lastName }
@@ -34,24 +35,13 @@ class Form extends React.Component {
  
   render() {
     return (
-      <div>
-        <form onSubmit={event => this.handleSubmit(event)}>
-          <input
-            type="text"
-            onChange={event => this.handleFirstNameChange(event)}
-            value={this.state.firstName}
-          />
-          <input
-            type="text"
-            onChange={event => this.handleLastNameChange(event)}
-            value={this.state.lastName}
-          />
-          <input type="submit"/>
-        </form>
-        {this.listOfSubmissions()}
-      </div>
+      <FormTwo
+        formData={this.state}
+        handleFirstNameChange={this.handleFirstNameChange}
+        handleLastNameChange={this.handleLastNameChange}
+      />
     )
   }
 }
  
-export default Form;
+export default ParentComponent;
